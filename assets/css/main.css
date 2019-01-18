@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+body{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ao-logo{
+	font-family: 'Patua One', sans-serif;
+}
+
+h1, h2, h3, h4{
+	font-family: 'Patua One', sans-serif;
+}
+
+/* NAVBAR
+-------------------------------------------------- */
+.navbar-collapse{
+	text-align: right;
+}
+.navbar{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.navbar .dropdown:hover>.dropdown-menu {
+	display: block;
+}
+.navbar-brand{
+	font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+	.navbar-brand.nav-centre-brand
+	{	
+		font-size: 2.0em;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		margin:0 auto;
+		/*Allow click through brand div*/
+		pointer-events: none;
+	}
+	.navbar #register{
+		margin-left: 16px;
+		box-shadow: 0 0 0 4px #7a29a3;
+		background-color: #7a29a3;
+	}
+	.navbar #register a{
+		color: white;
+	}	
+}
