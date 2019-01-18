@@ -51,7 +51,7 @@ function fetchData(){
         success: function (data) {
             tempFetchTime = new Date(Date.now());
             console.log("Fetch at: " + tempFetchTime.toLocaleTimeString());
-            filteredEvents.filter(dateFilter);
+            filteredEvents = data["events"].filter(dateFilter);
             filteredEvents.sort(dateSort);
             console.log(filteredEvents);
 
