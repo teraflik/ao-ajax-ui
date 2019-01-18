@@ -28,12 +28,14 @@ Sends ajax request to the API endpoint and filters the response data based on la
 
 #### 3. $(document).ready function
 Initiates `lastFetchTime` with the current time upon recieving JSON Response. Then sorts the json event data on `"updated"` attribute. Then sets the `fetchData()` function to execute every 1 minute.
-    
-    $.getJSON(endpoint, function(data){
-        lastFetchTime = new Date(Date.now());
-        sortedEvents = data["events"];
-        sortedEvents.sort(dateSort);
-        $.each(sortedEvents, function(i, eventData) {
-            prependEventRow(eventData);
-        }); });
-    setInterval(fetchData, 60000);
+
+```javascript
+$.getJSON(endpoint, function(data){
+    lastFetchTime = new Date(Date.now());
+    sortedEvents = data["events"];
+    sortedEvents.sort(dateSort);
+    $.each(sortedEvents, function(i, eventData) {
+        prependEventRow(eventData);
+    }); });
+setInterval(fetchData, 60000);
+```
