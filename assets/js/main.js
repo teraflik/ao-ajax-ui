@@ -41,7 +41,7 @@ function fetchData(){
     $.ajax({
         type: 'GET',
         url: endpoint,
-        async: false,
+        async: true,
         beforeSend: function (xhr) {
             if (xhr && xhr.overrideMimeType) {
                 xhr.overrideMimeType('application/json;charset=utf-8');
@@ -72,8 +72,7 @@ $(document).ready(function(){
     $.getJSON(endpoint, function(data){
         lastFetchTime = new Date(Date.now());
         console.log("First fetch: " + lastFetchTime.toLocaleTimeString() );
-        sortedEvents = data["events"];
-        sortedEvents.sort(dateSort);
+        sortedEvents = data["events"].sort(dateSort);
 
         $.each(sortedEvents, function(i, eventData) {
             prependEventRow(eventData);
